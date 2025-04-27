@@ -6,9 +6,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const create = async () => {
+const create = async (fileName = 'fresh.txt') => {
     
-    const filePath = path.join(__dirname, 'files', 'fresh.txt');
+    const filePath = path.join(__dirname, 'files', fileName);
     console.log('File path:', filePath);
     
     try {
@@ -47,4 +47,6 @@ const create = async () => {
     }
 };
 
-await create();
+
+await create(process.argv[2] || 'fresh.txt');
+// await create();
