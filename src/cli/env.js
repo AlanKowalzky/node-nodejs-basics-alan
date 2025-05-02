@@ -1,3 +1,5 @@
+import os from 'node:os';
+
 const parseEnv = () => {
     
     const envVars = process.env;
